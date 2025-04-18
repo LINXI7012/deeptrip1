@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Plans - DeepTrip</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/plans.css">
+    <link rel="stylesheet" href="css/travel-guide-details.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="plans-page">
+    <div class="fullscreen-bg"></div>
+    
+    <a href="index.html" class="back-nav">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19 12H5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 19L5 12L12 5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </a>
+    
+    <main class="content">
+        <div class="plans-header">
+            <h1 class="page-title">Your Travel Plans</h1>
+            <button class="btn btn-primary add-plan-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                New Trip
+            </button>
+        </div>
+        
+        <div class="tabs-container">
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="upcoming">Upcoming</button>
+                <button class="tab-btn" data-tab="past">Past</button>
+                <button class="tab-btn" data-tab="drafts">Drafts</button>
+            </div>
+            
+            <div class="tab-content active" data-tab-content="upcoming">
+                <div class="plans-container">
+                    <!-- Plans will be populated by JavaScript -->
+                </div>
+            </div>
+            
+            <div class="tab-content" data-tab-content="past">
+                <div class="empty-state">
+                    <div class="empty-icon">🏆</div>
+                    <h3>Trip History</h3>
+                    <p>Completed trips will appear here</p>
+                </div>
+            </div>
+            
+            <div class="tab-content" data-tab-content="drafts">
+                <div class="empty-state">
+                    <div class="empty-icon">📝</div>
+                    <h3>Trip Drafts</h3>
+                    <p>Save trip ideas and continue planning later</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="trip-details-modal">
+            <div class="modal-header">
+                <h2 class="modal-title">Kyoto Trip</h2>
+                <button class="modal-close">×</button>
+            </div>
+            
+            <div class="modal-content">
+                <div class="trip-info">
+                    <div class="trip-dates">
+                        <div class="date-item">
+                            <div class="date-label">Departure</div>
+                            <div class="date-value">Nov 10, 2024</div>
+                        </div>
+                        <div class="date-separator"></div>
+                        <div class="date-item">
+                            <div class="date-label">Return</div>
+                            <div class="date-value">Nov 17, 2024</div>
+                        </div>
+                    </div>
+                    
+                    <div class="trip-meta">
+                        <div class="meta-item">
+                            <div class="meta-icon">👥</div>
+                            <div class="meta-text">2 Travelers</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-icon">💰</div>
+                            <div class="meta-text">$2,400 Budget</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-icon">🌡️</div>
+                            <div class="meta-text">15-20°C</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="trip-sections">
+                    <div class="section-tabs">
+                        <button class="section-tab active" data-section="timeline">Timeline</button>
+                        <button class="section-tab" data-section="packing">Packing List</button>
+                        <button class="section-tab" data-section="budget">Budget</button>
+                        <button class="section-tab" data-section="contacts">Contacts</button>
+                    </div>
+                    
+                    <div class="section-content active" data-section-content="timeline">
+                        <div class="timeline-container">
+                            <div class="day-timeline">
+                                <div class="timeline-day-header">
+                                    <div class="day-number">Day 1</div>
+                                    <div class="day-title">Arrival & Settling In</div>
+                                    <div class="day-date">Nov 10</div>
+                                </div>
+                                <div class="timeline-items">
+                                    <div class="timeline-item">
+                                        <div class="timeline-time">14:30</div>
+                                        <div class="timeline-content">
+                                            <div class="timeline-title">Arrive at Kansai International Airport</div>
+                                            <div class="timeline-notes">Terminal 1, JAL Flight 123</div>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-time">16:00</div>
+                                        <div class="timeline-content">
+                                            <div class="timeline-title">Check-in at Ryokan Sakura</div>
+                                            <div class="timeline-notes">Traditional Japanese inn with onsen</div>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-time">18:30</div>
+                                        <div class="timeline-content">
+                                            <div class="timeline-title">Dinner at Pontocho Alley</div>
+                                            <div class="timeline-notes">Traditional Kyoto cuisine</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="day-timeline">
+                                <div class="timeline-day-header">
+                                    <div class="day-number">Day 2</div>
+                                    <div class="day-title">Eastern Kyoto</div>
+                                    <div class="day-date">Nov 11</div>
+                                </div>
+                                <div class="timeline-items">
+                                    <div class="timeline-item">
+                                        <div class="timeline-time">09:00</div>
+                                        <div class="timeline-content">
+                                            <div class="timeline-title">Visit Kiyomizu-dera Temple</div>
+                                            <div class="timeline-notes">UNESCO World Heritage site with beautiful views</div>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-time">12:30</div>
+                                        <div class="timeline-content">
+                                            <div class="timeline-title">Lunch at Ninen-zaka</div>
+                                            <div class="timeline-notes">Traditional teahouses and cafes</div>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-time">14:00</div>
+                                        <div class="timeline-content">
+                                            <div class="timeline-title">Explore Gion District</div>
+                                            <div class="timeline-notes">Historic geisha district</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <button class="btn btn-outline btn-small show-more-days">View All 7 Days</button>
+                        </div>
+                    </div>
+                    
+                    <div class="section-content" data-section-content="packing">
+                        <div class="packing-list-container">
+                            <div class="packing-category">
+                                <div class="category-header">
+                                    <h3>Essentials</h3>
+                                    <div class="category-progress">3/5</div>
+                                </div>
+                                <ul class="packing-items">
+                                    <li class="packing-item checked">
+                                        <label class="item-checkbox">
+                                            <input type="checkbox" checked>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <span class="item-name">Passport</span>
+                                    </li>
+                                    <li class="packing-item checked">
+                                        <label class="item-checkbox">
+                                            <input type="checkbox" checked>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <span class="item-name">Travel Insurance</span>
+                                    </li>
+                                    <li class="packing-item checked">
+                                        <label class="item-checkbox">
+                                            <input type="checkbox" checked>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <span class="item-name">Flight Tickets</span>
+                                    </li>
+                                    <li class="packing-item">
+                                        <label class="item-checkbox">
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <span class="item-name">Credit Cards</span>
+                                    </li>
+                                    <li class="packing-item">
+                                        <label class="item-checkbox">
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <span class="item-name">Japanese Yen</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="packing-category">
+                                <div class="category-header">
+                                    <h3>Clothing</h3>
+                                    <div class="category-progress">2/7</div>
+                                </div>
+                                <ul class="packing-items">
+                                    <li class="packing-item checked">
+                                        <label class="item-checkbox">
+                                            <input type="checkbox" checked>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <span class="item-name">Light Jacket</span>
+                                    </li>
+                                    <li class="packing-item checked">
+                                        <label class="item-checkbox">
+                                            <input type="checkbox" checked>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <span class="item-name">Comfortable Walking Shoes</span>
+                                    </li>
+                                    <li class="packing-item">
+                                        <label class="item-checkbox">
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <span class="item-name">Socks (7 pairs)</span>
+                                    </li>
+                                    <li class="packing-item">
+                                        <label class="item-checkbox">
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <span class="item-name">Underwear (7 pairs)</span>
+                                    </li>
+                                    <li class="packing-item">
+                                        <label class="item-checkbox">
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <span class="item-name">T-shirts (5)</span>
+                                    </li>
+                                    <li class="packing-item">
+                                        <label class="item-checkbox">
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <span class="item-name">Jeans/Pants (3)</span>
+                                    </li>
+                                    <li class="packing-item">
+                                        <label class="item-checkbox">
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <span class="item-name">Sweater/Hoodie</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <button class="btn btn-secondary add-item-btn">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Add Item
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="section-content" data-section-content="budget">
+                        <div class="budget-container">
+                            <div class="budget-summary">
+                                <div class="budget-amount">
+                                    <div class="amount-label">Total Budget</div>
+                                    <div class="amount-value">$2,400</div>
+                                </div>
+                                <div class="budget-progress">
+                                    <div class="progress-info">
+                                        <span>$1,850 Allocated</span>
+                                        <span>$550 Unallocated</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 77%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="budget-categories">
+                                <div class="budget-category">
+                                    <div class="category-icon" style="background-color: rgba(255, 107, 107, 0.2);">✈️</div>
+                                    <div class="category-details">
+                                        <div class="category-name">Flights</div>
+                                        <div class="category-allocation">$800 (33%)</div>
+                                    </div>
+                                </div>
+                                <div class="budget-category">
+                                    <div class="category-icon" style="background-color: rgba(217, 179, 16, 0.2);">🏨</div>
+                                    <div class="category-details">
+                                        <div class="category-name">Accommodation</div>
+                                        <div class="category-allocation">$600 (25%)</div>
+                                    </div>
+                                </div>
+                                <div class="budget-category">
+                                    <div class="category-icon" style="background-color: rgba(10, 35, 66, 0.2);">🍣</div>
+                                    <div class="category-details">
+                                        <div class="category-name">Food</div>
+                                        <div class="category-allocation">$300 (12.5%)</div>
+                                    </div>
+                                </div>
+                                <div class="budget-category">
+                                    <div class="category-icon" style="background-color: rgba(61, 153, 112, 0.2);">🚆</div>
+                                    <div class="category-details">
+                                        <div class="category-name">Transportation</div>
+                                        <div class="category-allocation">$150 (6.25%)</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="currency-converter">
+                                <h3>Currency Converter</h3>
+                                <div class="converter-inputs">
+                                    <div class="converter-input">
+                                        <input type="number" value="1" min="0">
+                                        <select>
+                                            <option value="USD" selected>USD</option>
+                                            <option value="JPY">JPY</option>
+                                            <option value="EUR">EUR</option>
+                                            <option value="GBP">GBP</option>
+                                        </select>
+                                    </div>
+                                    <div class="converter-equals">=</div>
+                                    <div class="converter-input">
+                                        <input type="number" value="142.81" disabled>
+                                        <select>
+                                            <option value="USD">USD</option>
+                                            <option value="JPY" selected>JPY</option>
+                                            <option value="EUR">EUR</option>
+                                            <option value="GBP">GBP</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section-content" data-section-content="contacts">
+                        <div class="contacts-container">
+                            <div class="emergency-contacts">
+                                <h3>Emergency Contacts</h3>
+                                <div class="contact-cards">
+                                    <div class="contact-card">
+                                        <div class="contact-icon">🚨</div>
+                                        <div class="contact-details">
+                                            <div class="contact-name">Emergency Services</div>
+                                            <div class="contact-number">110 (Police) / 119 (Ambulance)</div>
+                                        </div>
+                                    </div>
+                                    <div class="contact-card">
+                                        <div class="contact-icon">🏥</div>
+                                        <div class="contact-details">
+                                            <div class="contact-name">Kyoto University Hospital</div>
+                                            <div class="contact-number">+81 75-751-3111</div>
+                                        </div>
+                                    </div>
+                                    <div class="contact-card">
+                                        <div class="contact-icon">🏛️</div>
+                                        <div class="contact-details">
+                                            <div class="contact-name">US Embassy in Japan</div>
+                                            <div class="contact-number">+81 3-3224-5000</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="accommodations-contacts">
+                                <h3>Accommodation</h3>
+                                <div class="contact-card">
+                                    <div class="contact-icon">🏡</div>
+                                    <div class="contact-details">
+                                        <div class="contact-name">Ryokan Sakura</div>
+                                        <div class="contact-address">123 Gion-machi, Higashiyama-ku, Kyoto</div>
+                                        <div class="contact-number">+81 75-561-1234</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-footer">
+                <button class="btn btn-outline">Share Trip</button>
+                <button class="btn btn-primary">Save Changes</button>
+            </div>
+        </div>
+        
+        <div class="modal-overlay"></div>
+    </main>
+
+    <!-- Travel Guide Details Modal -->
+    <div class="travel-guide-overlay"></div>
+    <div class="travel-guide-modal">
+        <div class="travel-guide-header">
+            <h2 class="travel-guide-title">Travel Guide</h2>
+            <button class="travel-guide-close">×</button>
+        </div>
+        <div class="travel-guide-content">
+            <div class="travel-guide-container">
+                <!-- Travel guide content will be dynamically generated -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Travel Guide Modal -->
+    <div class="edit-guide-overlay"></div>
+    <div class="edit-guide-modal">
+        <div class="edit-guide-header">
+            <h2 class="edit-guide-title">编辑旅行攻略</h2>
+            <button class="edit-guide-close">×</button>
+        </div>
+        <div class="edit-guide-content">
+            <div class="edit-guide-container">
+                <div class="edit-section">
+                    <h3>操作选项</h3>
+                    <div class="edit-actions">
+                        <button id="deleteGuideBtn" class="btn btn-danger">删除攻略</button>
+                        <button id="modifyItineraryBtn" class="btn btn-primary">修改行程</button>
+                    </div>
+                </div>
+                
+                <div class="day-edit-section" style="display: none;">
+                    <h3>选择要修改的行程日</h3>
+                    <div class="day-select-container"></div>
+                    <div class="form-actions">
+                        <button type="button" id="backToEditBtn" class="btn btn-outline">返回</button>
+                    </div>
+                </div>
+                
+                <div class="day-edit-form" style="display: none;">
+                    <h3>修改行程信息</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="dayActivityInput">活动内容</label>
+                            <input type="text" id="dayActivityInput" class="form-control" placeholder="输入活动描述">
+                        </div>
+                        <div class="form-group">
+                            <label for="dayLocationInput">活动地点</label>
+                            <input type="text" id="dayLocationInput" class="form-control" placeholder="输入活动地点">
+                        </div>
+                        <div class="form-actions">
+                            <button type="button" id="backToDaysBtn" class="btn btn-outline">返回</button>
+                            <button type="button" id="saveDayBtn" class="btn btn-primary">保存修改</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="delete-confirm-section" style="display: none;">
+                    <h3>确认删除</h3>
+                    <p>您确定要删除这个旅行攻略吗？此操作不可撤销。</p>
+                    <div class="confirm-actions">
+                        <button id="cancelDeleteBtn" class="btn btn-outline">取消</button>
+                        <button id="confirmDeleteBtn" class="btn btn-danger">确认删除</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html> 

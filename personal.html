@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Space - DeepTrip</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/personal.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="personal-page">
+    <div class="fullscreen-bg"></div>
+    
+    <a href="index.html" class="back-nav">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19 12H5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 19L5 12L12 5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </a>
+    
+    <main class="content">
+        <div class="personal-header">
+            <div class="profile-section">
+                <div class="profile-avatar">
+                    <div class="avatar-placeholder">
+                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="profile-info">
+                    <h1 class="profile-name">Traveler</h1>
+                    <p class="profile-bio">Your personal travel history and memories</p>
+                </div>
+            </div>
+            
+            <div class="stats-section">
+                <div class="stat-item">
+                    <div class="stat-value">3</div>
+                    <div class="stat-label">Countries</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">5</div>
+                    <div class="stat-label">Cities</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">35</div>
+                    <div class="stat-label">Days</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="travel-map-section">
+            <h2 class="section-title">Your Travel Map</h2>
+            <div class="travel-map">
+                <!-- This would be a map visualization showing visited places -->
+                <div class="map-placeholder">
+                    <div class="visited-place" style="top: 35%; left: 47%;" data-place="Paris, France"></div>
+                    <div class="visited-place" style="top: 30%; left: 55%;" data-place="Rome, Italy"></div>
+                    <div class="visited-place" style="top: 45%; left: 78%;" data-place="Bali, Indonesia"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="travel-history-section">
+            <h2 class="section-title">Travel Timeline</h2>
+            <div class="timeline">
+                <!-- Timeline content will be populated by JavaScript -->
+            </div>
+        </div>
+        
+        <div class="privacy-settings">
+            <h2 class="section-title">Privacy Settings</h2>
+            <div class="settings-container">
+                <div class="setting-item">
+                    <div class="setting-info">
+                        <h3>Travel History</h3>
+                        <p>Control who can see your past travels</p>
+                    </div>
+                    <div class="setting-control">
+                        <select class="privacy-select">
+                            <option value="public">Public</option>
+                            <option value="friends">Friends Only</option>
+                            <option value="private" selected>Private</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="setting-item">
+                    <div class="setting-info">
+                        <h3>Future Plans</h3>
+                        <p>Control who can see your upcoming trips</p>
+                    </div>
+                    <div class="setting-control">
+                        <select class="privacy-select">
+                            <option value="public">Public</option>
+                            <option value="friends" selected>Friends Only</option>
+                            <option value="private">Private</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="setting-item">
+                    <div class="setting-info">
+                        <h3>Travel Photos</h3>
+                        <p>Control who can see your travel photos</p>
+                    </div>
+                    <div class="setting-control">
+                        <select class="privacy-select">
+                            <option value="public">Public</option>
+                            <option value="friends" selected>Friends Only</option>
+                            <option value="private">Private</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html> 

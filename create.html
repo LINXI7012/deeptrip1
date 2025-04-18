@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Your Trip - DeepTrip</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/create.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="create-page">
+    <div class="fullscreen-bg"></div>
+    
+    <a href="index.html" class="back-nav">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19 12H5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 19L5 12L12 5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </a>
+    
+    <main class="content">
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-bar-fill"></div>
+            </div>
+            <div class="progress-text">1/8</div>
+        </div>
+        
+        <div class="question-container">
+            <!-- Question 1 - 旅行地点范围 -->
+            <div class="question active" data-question-id="1">
+                <h2 class="question-text">您希望去哪个地区旅行？</h2>
+                <div class="options-grid">
+                    <div class="question-option" data-value="domestic">
+                        <div class="option-icon">🏡</div>
+                        <div class="option-text">国内</div>
+                    </div>
+                    <div class="question-option" data-value="asia">
+                        <div class="option-icon">🌏</div>
+                        <div class="option-text">亚洲</div>
+                    </div>
+                    <div class="question-option" data-value="europe">
+                        <div class="option-icon">🏰</div>
+                        <div class="option-text">欧洲</div>
+                    </div>
+                    <div class="question-option" data-value="america">
+                        <div class="option-icon">🗽</div>
+                        <div class="option-text">美洲</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Question 2 - 地理特征 -->
+            <div class="question" data-question-id="2">
+                <h2 class="question-text">您喜欢什么地理特征的目的地？</h2>
+                <div class="options-grid">
+                    <div class="question-option" data-value="beach">
+                        <div class="option-icon">🏖️</div>
+                        <div class="option-text">海滩</div>
+                    </div>
+                    <div class="question-option" data-value="mountain">
+                        <div class="option-icon">⛰️</div>
+                        <div class="option-text">山脉</div>
+                    </div>
+                    <div class="question-option" data-value="city">
+                        <div class="option-icon">🏙️</div>
+                        <div class="option-text">城市</div>
+                    </div>
+                    <div class="question-option" data-value="countryside">
+                        <div class="option-icon">🏞️</div>
+                        <div class="option-text">乡村</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Question 3 - 气候类型 -->
+            <div class="question" data-question-id="3">
+                <h2 class="question-text">您偏好什么气候类型？</h2>
+                <div class="options-grid">
+                    <div class="question-option" data-value="tropical">
+                        <div class="option-icon">🌴</div>
+                        <div class="option-text">热带</div>
+                    </div>
+                    <div class="question-option" data-value="temperate">
+                        <div class="option-icon">🌤️</div>
+                        <div class="option-text">温带</div>
+                    </div>
+                    <div class="question-option" data-value="cold">
+                        <div class="option-icon">❄️</div>
+                        <div class="option-text">寒冷</div>
+                    </div>
+                    <div class="question-option" data-value="any">
+                        <div class="option-icon">🌍</div>
+                        <div class="option-text">不限</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Question 4 - 城市规模 -->
+            <div class="question" data-question-id="4">
+                <h2 class="question-text">您更喜欢什么规模的城市？</h2>
+                <div class="options-grid">
+                    <div class="question-option" data-value="metropolis">
+                        <div class="option-icon">🌃</div>
+                        <div class="option-text">大都市</div>
+                    </div>
+                    <div class="question-option" data-value="midsize">
+                        <div class="option-icon">🏢</div>
+                        <div class="option-text">中等城市</div>
+                    </div>
+                    <div class="question-option" data-value="town">
+                        <div class="option-icon">🏘️</div>
+                        <div class="option-text">小镇</div>
+                    </div>
+                    <div class="question-option" data-value="rural">
+                        <div class="option-icon">🌾</div>
+                        <div class="option-text">乡村地区</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Question 5 - 旅行风格 -->
+            <div class="question" data-question-id="5">
+                <h2 class="question-text">您喜欢什么风格的旅行？</h2>
+                <div class="options-grid">
+                    <div class="question-option" data-value="adventure">
+                        <div class="option-icon">🧗‍♂️</div>
+                        <div class="option-text">冒险体验</div>
+                    </div>
+                    <div class="question-option" data-value="cultural">
+                        <div class="option-icon">🏛️</div>
+                        <div class="option-text">文化探索</div>
+                    </div>
+                    <div class="question-option" data-value="relaxation">
+                        <div class="option-icon">🧘</div>
+                        <div class="option-text">放松休闲</div>
+                    </div>
+                    <div class="question-option" data-value="foodie">
+                        <div class="option-icon">🍽️</div>
+                        <div class="option-text">美食之旅</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Question 6 - 旅行时长 -->
+            <div class="question" data-question-id="6">
+                <h2 class="question-text">您计划旅行多长时间？</h2>
+                <div class="options-grid">
+                    <div class="question-option" data-value="weekend">
+                        <div class="option-icon">2-3</div>
+                        <div class="option-text">周末短途</div>
+                    </div>
+                    <div class="question-option" data-value="week">
+                        <div class="option-icon">5-7</div>
+                        <div class="option-text">一周左右</div>
+                    </div>
+                    <div class="question-option" data-value="twoweeks">
+                        <div class="option-icon">10-14</div>
+                        <div class="option-text">两周左右</div>
+                    </div>
+                    <div class="question-option" data-value="month">
+                        <div class="option-icon">30+</div>
+                        <div class="option-text">一个月以上</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Question 7 - 预算水平 -->
+            <div class="question" data-question-id="7">
+                <h2 class="question-text">您的旅行预算是？</h2>
+                <div class="options-grid">
+                    <div class="question-option" data-value="budget">
+                        <div class="option-icon">💰</div>
+                        <div class="option-text">经济实惠</div>
+                    </div>
+                    <div class="question-option" data-value="moderate">
+                        <div class="option-icon">💰💰</div>
+                        <div class="option-text">中等预算</div>
+                    </div>
+                    <div class="question-option" data-value="luxury">
+                        <div class="option-icon">💰💰💰</div>
+                        <div class="option-text">豪华体验</div>
+                    </div>
+                    <div class="question-option" data-value="unlimited">
+                        <div class="option-icon">💎</div>
+                        <div class="option-text">不限预算</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Question 8 - 旅伴 -->
+            <div class="question" data-question-id="8">
+                <h2 class="question-text">您与谁一起旅行？</h2>
+                <div class="options-grid">
+                    <div class="question-option" data-value="solo">
+                        <div class="option-icon">🧍</div>
+                        <div class="option-text">独自旅行</div>
+                    </div>
+                    <div class="question-option" data-value="couple">
+                        <div class="option-icon">💑</div>
+                        <div class="option-text">情侣出游</div>
+                    </div>
+                    <div class="question-option" data-value="friends">
+                        <div class="option-icon">👫</div>
+                        <div class="option-text">朋友结伴</div>
+                    </div>
+                    <div class="question-option" data-value="family">
+                        <div class="option-icon">👨‍👩‍👧‍👦</div>
+                        <div class="option-text">家庭旅行</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="loading-animation" style="display: none;">
+            <div class="loading-text">Crafting your perfect journey...</div>
+            <div class="particle-container">
+                <!-- Loading animation particles go here -->
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+            </div>
+        </div>
+        
+        <div class="results-container" style="display: none;">
+            <!-- Results will be populated by JavaScript -->
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

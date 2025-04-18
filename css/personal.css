@@ -1,0 +1,371 @@
+/* Personal Page Styles */
+body.personal-page .fullscreen-bg {
+    background-image: url('../images/personal-bg.jpg');
+    opacity: 0.15;
+}
+
+.content {
+    padding: 0 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header Section */
+.personal-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (min-width: 768px) {
+    .personal-header {
+        flex-direction: row;
+    }
+}
+
+.profile-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+    .profile-section {
+        margin-bottom: 0;
+    }
+}
+
+.profile-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--accent-color);
+}
+
+.avatar-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-name {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-light);
+}
+
+.profile-bio {
+    font-size: 1rem;
+    color: var(--text-dim);
+    max-width: 300px;
+}
+
+.stats-section {
+    display: flex;
+    gap: 2rem;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Section Title */
+.section-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--text-light);
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background: var(--accent-color);
+    border-radius: 3px;
+}
+
+/* Travel Map Section */
+.travel-map-section {
+    margin-bottom: 3rem;
+}
+
+.travel-map {
+    width: 100%;
+    height: 400px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.map-placeholder {
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/world-map.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    opacity: 0.7;
+}
+
+.visited-place {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: var(--highlight-color);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    border: 3px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0 0 15px rgba(255, 107, 107, 0.7);
+    cursor: pointer;
+}
+
+.visited-place::before {
+    content: attr(data-place);
+    position: absolute;
+    white-space: nowrap;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(10, 35, 66, 0.9);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.visited-place:hover::before {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Travel History Section */
+.travel-history-section {
+    margin-bottom: 3rem;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 30px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 2px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2.5rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 1.5rem;
+    left: -29px;
+    width: 16px;
+    height: 16px;
+    background: var(--accent-color);
+    border: 4px solid var(--main-color);
+    border-radius: 50%;
+}
+
+.timeline-date {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--accent-color);
+}
+
+.timeline-content h4 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-light);
+}
+
+.timeline-content p {
+    color: var(--text-dim);
+}
+
+/* Privacy Settings */
+.privacy-settings {
+    margin-bottom: 3rem;
+}
+
+.settings-container {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.setting-item {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (min-width: 768px) {
+    .setting-item {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.setting-info {
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+    .setting-info {
+        margin-bottom: 0;
+    }
+}
+
+.setting-info h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-light);
+}
+
+.setting-info p {
+    font-size: 0.9rem;
+    color: var(--text-dim);
+    max-width: 300px;
+}
+
+.privacy-select {
+    padding: 10px 15px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--text-light);
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    width: 100%;
+    min-width: 150px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.privacy-select:hover, .privacy-select:focus {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: var(--accent-color);
+    outline: none;
+}
+
+.privacy-select option {
+    background-color: var(--main-color);
+    color: var(--text-light);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .profile-avatar {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .profile-name {
+        font-size: 1.5rem;
+    }
+    
+    .stat-value {
+        font-size: 2rem;
+    }
+    
+    .travel-map {
+        height: 300px;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .stats-section {
+        gap: 1rem;
+    }
+    
+    .stat-value {
+        font-size: 1.8rem;
+    }
+    
+    .travel-map {
+        height: 250px;
+    }
+    
+    .timeline-item {
+        padding: 1rem;
+    }
+    
+    .timeline-date {
+        font-size: 1rem;
+    }
+    
+    .timeline-content h4 {
+        font-size: 1.2rem;
+    }
+}

@@ -1,0 +1,311 @@
+/* Travel Guide Details Modal Styles */
+.travel-guide-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    width: 90%;
+    max-width: 1000px;
+    background: var(--main-color);
+    border-radius: 15px;
+    z-index: 120;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+.travel-guide-modal.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.travel-guide-header {
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.travel-guide-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text-light);
+}
+
+.travel-guide-close {
+    background: transparent;
+    border: none;
+    color: var(--text-dim);
+    font-size: 2rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.travel-guide-close:hover {
+    color: var(--highlight-color);
+}
+
+.travel-guide-content {
+    padding: 30px;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.travel-guide-container {
+    width: 100%;
+}
+
+.guide-destination {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.guide-destination h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.guide-highlights {
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.guide-highlights h4, .guide-daily-plan h4 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+}
+
+.guide-highlights ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    padding: 0;
+    list-style-type: none;
+}
+
+.guide-highlights li {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.guide-daily-plan-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 1.5rem;
+    padding: 1rem 0;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.guide-day-card {
+    min-width: 200px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 1.5rem;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.guide-day-number {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent-color);
+    color: var(--main-color);
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.guide-day-details h5 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.travel-guide-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 35, 66, 0.8);
+    backdrop-filter: blur(5px);
+    z-index: 110;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+}
+
+.travel-guide-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Edit Travel Guide Modal Styles */
+.edit-guide-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    width: 90%;
+    max-width: 600px;
+    background: var(--main-color);
+    border-radius: 15px;
+    z-index: 140;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+.edit-guide-modal.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.edit-guide-header {
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.edit-guide-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--text-light);
+}
+
+.edit-guide-close {
+    background: transparent;
+    border: none;
+    color: var(--text-dim);
+    font-size: 2rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.edit-guide-close:hover {
+    color: var(--highlight-color);
+}
+
+.edit-guide-content {
+    padding: 30px;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.edit-guide-container {
+    width: 100%;
+}
+
+.edit-section, .day-edit-section, .day-edit-form, .delete-confirm-section {
+    margin-bottom: 2rem;
+}
+
+.edit-section h3, .day-edit-section h3, .day-edit-form h3, .delete-confirm-section h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--text-light);
+}
+
+.edit-actions, .confirm-actions, .form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.btn-danger {
+    background-color: var(--highlight-color);
+    color: white;
+}
+
+.day-select-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 1rem;
+}
+
+.day-select-btn {
+    padding: 0.8rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: var(--text-light);
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.day-select-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: var(--text-light);
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.8rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: var(--text-light);
+    font-family: 'Poppins', sans-serif;
+}
+
+.edit-guide-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 35, 66, 0.8);
+    backdrop-filter: blur(5px);
+    z-index: 130;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+}
+
+.edit-guide-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+@media (max-width: 768px) {
+    .guide-highlights ul {
+        grid-template-columns: 1fr;
+    }
+    
+    .edit-actions, .confirm-actions, .form-actions {
+        flex-direction: column;
+    }
+} 
